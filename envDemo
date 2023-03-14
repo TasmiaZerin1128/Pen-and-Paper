@@ -1,4 +1,6 @@
 APP_NAME='your app name'
 APP_PORT='port number'
-USERNAME='username for db'
 SALTROUND='salt for hashing'
+
+ACCESS_TOKEN_SECRET='any secret token'
+ACCESS_TOKEN_LIFE='life span of the token'

@@ -12,10 +12,10 @@ exports.getUserbyUsername = async (req, res) => {
   res.status(data.status).send(data.message);
 };
 
-exports.createUser = async (req, res) => {
-  const data = await userService.createUser(req.body);
-  res.status(data.status).send(data.message);
-};
+// exports.createUser = async (req, res) => {
+//   const data = await userService.createUser(req.body);
+//   res.status(data.status).send(data.message);
+// };
 
 exports.updateUserbyUsername = async (req, res) => {
   const data = await userService.updateUser(req.params.username, req.body);

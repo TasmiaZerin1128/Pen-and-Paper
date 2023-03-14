@@ -5,24 +5,24 @@ const crypto = require("crypto");
 
 'use strict';
 
-async function createUser(user){
+// async function createUser(user){
 
-  const userValid = userUtils.userValidator(user.username, user.email, user.password);
-  if(!userValid.valid){
-    return {status:400, message: userValid.message};
-  }
+//   const userValid = userUtils.userValidator(user.username, user.email, user.password);
+//   if(!userValid.valid){
+//     return {status:400, message: userValid.message};
+//   }
 
-  try{
-    const id = crypto.randomUUID();
-    const hashedPassword = await hashPassword(user.password);
+//   try{
+//     const id = crypto.randomUUID();
+//     const hashedPassword = await hashPassword(user.password);
 
-    const data = await userRepository.createUser(id, user.username.toLowerCase(), user.email, hashedPassword);
-    return {status:201, message:'User created successfully'};
-  }
-  catch{
-    return {status:400, message:'Please check your credentials again'};
-  }
-};
+//     const data = await userRepository.createUser(id, user.fullName, user.username.toLowerCase(), user.email, hashedPassword);
+//     return {status:201, message:'User created successfully'};
+//   }
+//   catch{
+//     return {status:400, message:'Please check your credentials again'};
+//   }
+// };
 
 async function getAllUsers() {
   try{
@@ -96,4 +96,4 @@ async function getUserbyEmail(email){
   }
 }
 
-module.exports = { createUser, getAllUsers, getUserbyUsername, getUserbyEmail, updateUser, deleteUser };
+module.exports = { getAllUsers, getUserbyUsername, getUserbyEmail, updateUser, deleteUser };

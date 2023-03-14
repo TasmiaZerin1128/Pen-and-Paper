@@ -1,21 +1,22 @@
 const userDTO = require("../DTOs/user.dto");
 const User = require("../models/user.model");
 
-exports.createUser = async (id, username, email, password) => {
-  try {
-    const result = await User.create({
-      id: id,
-      username: username,
-      email: email,
-      password: password,
-    });
-    console.log("User created successfully");
-    return result;
-  } catch (err) {
-    console.log(err.stack);
-    throw err;
-  }
-};
+// exports.createUser = async (id, fullName, username, email, password) => {
+//   try {
+//     const result = await User.create({
+//       id: id,
+//       fullName: fullName,
+//       username: username,
+//       email: email,
+//       password: password,
+//     });
+//     console.log("User created successfully");
+//     return result;
+//   } catch (err) {
+//     console.log(err.stack);
+//     throw err;
+//   }
+// };
 
 exports.getAllUsers = async () => {
   try {
